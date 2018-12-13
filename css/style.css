@@ -1,0 +1,99 @@
+.my--10{
+	margin-top: -10px;
+}
+
+.mx-20--20{
+	margin-right: -20px;
+	margin-left: 20px;
+}
+
+.flex-wrapper {
+  display: flex;
+  flex-flow: row nowrap;
+}
+
+.single-chart {
+  width: 33%;
+  justify-content: space-around ;
+}
+
+.circular-chart {
+  display: block;
+  margin: 10px auto;
+  max-width: 80%;
+  max-height: 250px;
+}
+
+.circle-bg {
+  fill: none;
+  stroke: #eee;
+  stroke-width: 3.8;
+}
+
+.circle {
+  fill: none;
+  stroke-width: 2.8;
+  stroke-linecap: round;
+  animation: progress 1s ease-out forwards;
+}
+
+@keyframes progress {
+  0% {
+    stroke-dasharray: 0 100;
+  }
+}
+
+.circular-chart.orange .circle {
+  stroke: #ff9f00;
+}
+
+.circular-chart.green .circle {
+  stroke: #4CC790;
+}
+
+.circular-chart.blue .circle {
+  stroke: #3c9ee5;
+}
+
+.percentage {
+  fill: #666;
+  font-family: sans-serif;
+  font-size: 0.7em;
+  text-anchor: middle;
+}
+
+.animated{
+	opacity: 1;
+	max-height: auto;
+	overflow: hidden;
+	transition: all 2s;
+}
+
+.animated.ng-hide{
+	opacity: 0;
+	max-height: 0px !important;
+	display: inline; !important;
+}
+
+.scrollable-menu {
+    height: auto;
+    max-height: 500px;
+    overflow-x: hidden;
+}
+
+.dropdown-item{
+	-webkit-user-select: none;
+	-khtml-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	-o-user-select: none;
+	user-select: none;
+}
+
+.jumbotron-fluid{
+	background-repeat: no-repeat
+}
+
+.sup{
+	opacity: 0.9;
+}

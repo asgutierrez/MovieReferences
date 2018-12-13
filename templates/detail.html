@@ -1,0 +1,96 @@
+<div class="py-10">
+	<!-- Barra de navegación -->
+	<nav class="navbar fixed-top navbar-dark bg-dark navbar-expand-lg">
+		<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo01" aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Toggle navigation">
+			<span class="navbar-toggler-icon"></span>
+		</button>
+		<div class="collapse navbar-collapse" id="navbarTogglerDemo01">
+			<!-- Logo de la página -->
+			<a class="navbar-brand" href="#">
+				<img class="" src="img/logo2.png" alt="Card image cap">
+			</a>
+			<!-- Nombre de la página -->
+			<ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+				<li class="nav-item active">
+					<a class="nav-link" href="#">MovieReferences <span class="sr-only">(current)</span></a>
+				</li>
+			</ul>
+			<form class="form-inline my-2 my-lg-0">
+				<!-- Menú de género para la vista de detalle -->
+				<div class="dropdown">
+					<a href="#">
+						<button class="btn btn-outline-success btn-secondary dropdown-toggle mr-sm-2" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" >
+					  All
+						</button>
+					</a>	
+				</div>
+				<!-- Busqueda de película por título para la vista de detalle -->
+				<a href="#"><input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search""></a>
+			</form>
+		</div>	  
+	</nav>
+
+	<!-- Pánel de detalles de la película -->
+	<div class="jumbotron jumbotron-fluid my-5 py-0" style="background-image: url({{url2+detailed_post.backdrop_path}});">
+	  	<div class="jumbotron jumbotron-fluid sup">
+	  	  	<div class="container sup">
+	  	  		<div class="row ">
+	  	  		    <div class="col-md-3">
+	  	  		    	<!-- Imagen principal de la película -->
+	  	  		        <img class="card-img-top w-75" src={{url+detailed_post.poster_path}} alt="Card image cap">
+	  	  		    </div>
+	  	  		    <div class="col-md-8">
+	  	  		        <div class="card-block">
+	  	  		        	<div class="row ">
+	  	  		        		<!-- Título y fecha -->
+	  	  		        	    <div class="col-md-8 mt-3">
+	  	  		        	        <h2 class="card-title font-weight-bold">{{detailed_post.title}}</h2>
+	  	  		        	        <h5 class="card-text my--10"><small>{{detailed_post.release_date | date : "MMMM d, yyyy"}}</small></h5>
+	  	  		        	    </div>
+	  	  		        	    <div class="col-md-2 mt-3">
+	  	  		        	    	<!-- Puntuación de la película-->
+	  	  		        	    	<div class="row my-0 py-0">
+	  	  		        	    		<div class="col-md-9 px-0 mx-0 mt-2">
+	  	  		        	    			<svg viewBox="0 0 50 50" class="circular-chart {{detailed_post.vote_color}}">
+	  	  		        	    			    <path class="circle-bg"
+	  	  		        	    			        d="M18 2.0845
+	  	  		        	    			          a 15.9155 15.9155 0 0 1 0 31.831
+	  	  		        	    			          a 15.9155 15.9155 0 0 1 0 -31.831"
+	  	  		        	    			    />
+	  	  		        	    			    <path class="circle"
+	  	  		        	    			        stroke-dasharray="{{detailed_post.vote_average*10}}, 100"
+	  	  		        	    			        d="M18 2.0845
+	  	  		        	    			          a 15.9155 15.9155 0 0 1 0 31.831
+	  	  		        	    			          a 15.9155 15.9155 0 0 1 0 -31.831"
+	  	  		        	    			    />
+	  	  		        	    			    <text x="19" y="21.65" class="percentage font-weight-bold">{{detailed_post.vote_average*10}}%</text>
+	  	  		        	    			</svg>
+	  	  		        	    		</div>
+	  	  		        	    		<div class="col-md-1 px-0 mx-0">
+	  	  		        	    			<h6 class="card-text mt-4 font-weight-bold">Vote average</h6>
+	  	  		        	    		</div>
+	  	  		        	    	</div>
+	  	  		        	    	<!-- Popularidad de la película -->
+	  	  		        	    	<div class="row my--10">
+	  	  		        	    		<div class=	"col-md-9 px-0 mt-2 mx-20--20">
+	  	  		        	    			<img class="card-img-top w-25" src="img/popularity.png" alt="popularity image cap">
+	  	  		        	    			<h6>
+	  	  		        	    			{{detailed_post.popularity}}</h6>
+	  	  		        	    		</div>
+	  	  		        	    		<div class="col-md-3 px-0 mx-0">
+	  	  		        	    			<h6 class="card-text mt-4 font-weight-bold">Popularity</h6>
+	  	  		        	    		</div>
+	  	  		        	    	</div>
+	  	  		        	    </div>        
+	  	  		        	</div>
+	  	  		        	<!-- Detalles de la película -->
+	  	  		        	<h5 class="card-text mt-2 font-weight-bold">Overview</h5>
+	  	  		          	<h5 class="card-text mt-3"><small>{{detailed_post.overview}}</small></h5>
+	  	  		      	</div>
+	  	  		    </div>        
+	  	  		</div>
+	  	  	</div>
+	  	</div>
+	</div>
+	
+</div>
